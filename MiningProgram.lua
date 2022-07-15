@@ -40,10 +40,14 @@ while turtle.getFuelLevel() > 0 do
             turtle.back()
         end
         DropOff()
-    elseif CheckToReturn(distanceToStart) == "continue" then
+    end
+    
+    if CheckToReturn(distanceToStart) == "continue" then
         turtle.forward()
         distanceToStart = distanceToStart + 1
-    elseif CheckToReturn(distanceToStart) == "leave" then
+    end
+    
+    if CheckToReturn(distanceToStart) == "leave" then
         for i = 1, distanceToStart do
             turtle.back()
         end
