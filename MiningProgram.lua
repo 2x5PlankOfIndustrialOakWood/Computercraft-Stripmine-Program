@@ -1,4 +1,4 @@
--- turtle mines first above, then to the left, then to the right, and finally straight
+--- turtle mines first above, then to the left, then to the right, and finally straight
 function TurtleMine()
     turtle.digUp()
     turtle.turnLeft()
@@ -38,7 +38,7 @@ while turtle.getFuelLevel() > 0 do
     if CheckToReturn(distanceToStart) == "continue" then
         turtle.forward()
         distanceToStart = distanceToStart + 1
-    else
+    elseif CheckToReturn(distanceToStart) == "leave" then
         for i = 1, distanceToStart do
             turtle.back()
         end
