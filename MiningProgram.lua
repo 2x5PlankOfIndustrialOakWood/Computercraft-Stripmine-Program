@@ -1,4 +1,3 @@
-turtle.refuel()
 --- turtle mines first above, then to the left, then to the right, and finally straight
 function TurtleMine()
     turtle.digUp()
@@ -50,15 +49,15 @@ while true do
         DropOff()
     end
     
-    if CheckToReturn(distanceToStart) == "continue" then
-        turtle.forward()
-        distanceToStart = distanceToStart + 1
-    end
-    
     if CheckToReturn(distanceToStart) == "leave" then
         for i = 1, distanceToStart do
             turtle.back()
         end
         DropOff()
+    end
+
+    if CheckToReturn(distanceToStart) == "continue" then
+        turtle.forward()
+        distanceToStart = distanceToStart + 1
     end
 end
