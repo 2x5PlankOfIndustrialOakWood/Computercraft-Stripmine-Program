@@ -35,7 +35,12 @@ local distanceToStart = 0
 
 while turtle.getFuelLevel() > 0 do
     TurtleMine()
-    if CheckToReturn(distanceToStart) == "continue" then
+    if turtle.getItemCount(16) > 0 then
+        for i = 1, distanceToStart do
+            turtle.back()
+        end
+        DropOff()
+    elseif CheckToReturn(distanceToStart) == "continue" then
         turtle.forward()
         distanceToStart = distanceToStart + 1
     elseif CheckToReturn(distanceToStart) == "leave" then
