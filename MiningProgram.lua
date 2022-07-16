@@ -1,3 +1,5 @@
+-- refuels turtle
+turtle.refuel()
 --- turtle mines first above, then to the left, then to the right, and finally straight
 function TurtleMine()
     turtle.digUp()
