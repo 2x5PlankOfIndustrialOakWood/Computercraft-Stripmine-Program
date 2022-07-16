@@ -54,6 +54,7 @@ while turtle.getFuelLevel() > 0 do
             turtle.back()
         end
         DropOff()
+        distanceToStart = 0
     end
 
     if returnResult == "continue" then
