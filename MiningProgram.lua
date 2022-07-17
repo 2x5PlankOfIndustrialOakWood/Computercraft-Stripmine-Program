@@ -16,10 +16,6 @@ end
 function CheckToReturn(fuel, distance)
     if fuel == distance then
         return "leave"
-        -- if there is not enough fuel to return to the starting location then the turtle will stop as it is better to manually retrieve the material than loose it
-    elseif fuel < distance then
-        os.shutdown()
-
     elseif fuel > distance then
         return "continue"
     end
@@ -39,7 +35,7 @@ local distanceToStart = 0
 while turtle.getFuelLevel() > 0 do
     local returnResult = CheckToReturn(turtle.getFuelLevel(), distanceToStart)
     TurtleMine()
-
+    -- if there is not enough fuel to return to the starting location then the turtle will stop as it is better to manually retrieve the material than loose it
     if turtle.getItemCount(16) > 0 then
         for i = 1, distanceToStart do
             turtle.back()
