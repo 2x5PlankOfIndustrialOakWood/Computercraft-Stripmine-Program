@@ -43,7 +43,7 @@ while turtle.getFuelLevel() > 0 do
     if turtle.getItemCount(16) > 0 then
         for i = 1, distanceToStart do
             turtle.back()
-            if turtle.getFuelLevel() < distanceToStart then
+            if turtle.getFuelLevel() == 0 then
                 os.shutdown()
             end
         end
@@ -52,7 +52,7 @@ while turtle.getFuelLevel() > 0 do
     elseif returnResult == "leave" then
         for i = 1, distanceToStart do
             turtle.back()
-            if turtle.getFuelLevel() < distanceToStart then
+            if turtle.getFuelLevel() == 0 then
                 os.shutdown()
             end
         end
